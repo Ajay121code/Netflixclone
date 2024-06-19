@@ -1,0 +1,8 @@
+// Cubic Transition
+@mixin cubic-transition($transition-property: all, $transition-duration: .5s) {
+  transition: $transition-property $transition-duration cubic-bezier(0.19, 1, 0.22, 1) 0s;
+  -webkit-transition: $transition-property $transition-duration cubic-bezier(0.19, 1, 0.22, 1) 0s;
+  -moz-transition: $transition-property $transition-duration cubic-bezier(0.19, 1, 0.22, 1) 0s;
+  -o-transition: $transition-property $transition-duration cubic-bezier(0.19, 1, 0.22, 1) 0s;
+  -ms-transition: $transition-property $transition-duration cubic-bezier(0.19, 1, 0.22, 1) 0s;
+}

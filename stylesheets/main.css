@@ -1,0 +1,471 @@
+/*  ==========================================================================
+	Setup: Variables, Mixins
+    ========================================================================== */
+/*  ==========================================================================
+	Fonts
+    ========================================================================== */
+@import url(https://ka-p.fontawesome.com/releases/v6.4.0/css/pro.min.css?token=8c417dbf0e);
+@import url(https://ka-p.fontawesome.com/releases/v6.4.0/css/pro-v4-shims.min.css?token=8c417dbf0e);
+@import url(https://ka-p.fontawesome.com/releases/v6.4.0/css/pro-v5-font-face.min.css?token=8c417dbf0e);
+@import url(https://ka-p.fontawesome.com/releases/v6.4.0/css/pro-v4-font-face.min.css?token=8c417dbf0e);
+/*  ==========================================================================
+	Global Settings & Utilities
+    ========================================================================== */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+.group::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+img {
+  max-width: 100%;
+}
+
+figure {
+  margin: 0px;
+}
+
+.display-1 {
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -2px;
+}
+
+.title {
+  font-size: 2rem;
+  color: #fff;
+}
+
+@media (max-width: 991px) {
+  .title {
+    font-size: 1.125rem;
+  }
+}
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
+  color: #fff;
+}
+
+@media (max-width: 991px) {
+  h1,
+  .h1,
+  h2,
+  .h2,
+  h3,
+  .h3 {
+    font-size: 1.125rem;
+  }
+}
+.divider {
+  background-color: #232323;
+  height: 8px;
+}
+
+.figure1 img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.figure1 .overlay1 {
+  background: rgba(0, 0, 0, 0.4);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.video-img-wrapper {
+  position: relative;
+}
+.video-img-wrapper .figure1 {
+  position: relative;
+  z-index: 1;
+}
+.video-img-wrapper .video-wrapper {
+  position: absolute;
+  top: 20%;
+  left: 13%;
+  z-index: 0;
+  max-width: 100%;
+  max-height: 100%;
+  width: 73%;
+  height: 55%;
+  overflow: hidden;
+}
+.video-img-wrapper .video-wrapper video {
+  width: 100%;
+  height: 100%;
+}
+
+.video-img-wrapper.alt .video-wrapper {
+  position: absolute;
+  top: 6%;
+  left: 19%;
+  z-index: 0;
+  max-width: 100%;
+  max-height: 100%;
+  width: 61%;
+  height: 55%;
+  overflow: hidden;
+}
+
+.small-blue {
+  font-size: 0.875rem;
+  color: #0071eb;
+}
+
+.card1-float {
+  z-index: 1;
+  margin-top: -40%;
+}
+
+.form1 .input-fields {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid;
+}
+.form1 .input-fields input {
+  width: 100%;
+  height: 100%;
+  padding: 0px 10px;
+  outline: none;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.form1 .input-fields input:focus {
+  border: 1px solid #fff;
+}
+.form1 .input-fields input:focus ~ label, .form1 .input-fields input:valid ~ label {
+  top: 4px;
+  font-size: 12px;
+}
+.form1 .input-fields label {
+  position: absolute;
+  top: 16px;
+  left: 10px;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.7);
+  transition: 0.1s;
+  text-transform: capitalize;
+  pointer-events: none;
+}
+
+/*  ==========================================================================
+	Layouts
+    ========================================================================== */
+#container {
+  display: flex;
+  flex-direction: column;
+  background-color: #000;
+}
+#container .content {
+  flex: 1;
+}
+
+#header {
+  height: 86px;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+}
+#header .select1::after {
+  right: -10px;
+}
+
+@media (max-width: 991px) {
+  #header .select1::after {
+    right: 10px;
+  }
+}
+.logo svg {
+  fill: #e50914;
+  height: 40px;
+}
+
+@media (max-width: 767px) {
+  .logo svg {
+    height: 24px;
+  }
+}
+#footer {
+  padding: 60px 0;
+}
+#footer p,
+#footer a {
+  color: rgba(255, 255, 255, 0.7);
+}
+#footer a {
+  text-decoration: underline;
+}
+#footer .nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#footer .nav-list li {
+  margin-bottom: 12px;
+}
+
+/*  ==========================================================================
+	Components
+    ========================================================================== */
+.btn {
+  padding: 4px 16px;
+  font-size: 0.875rem;
+  border-radius: 4px;
+  line-height: 1;
+  min-height: 32px;
+  display: inline-flex;
+  align-items: center;
+  text-transform: capitalize;
+  color: #fff;
+}
+.btn:hover {
+  background-color: #c11119;
+}
+.btn-lg {
+  min-height: 56px;
+  padding: 12px 24px;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 767px) {
+  .btn-lg {
+    min-height: 48px;
+  }
+}
+.form1 .form-control {
+  background-color: rgba(22, 22, 22, 0.7);
+  border: 1px solid #2d2d2d;
+  border-radius: 4px;
+  height: 32px;
+  padding: 4px 16px;
+  color: #fff;
+}
+.form1 .form-control::-moz-placeholder {
+  font-size: 16px;
+  color: rgba(222, 226, 230, 0.7);
+  text-transform: capitalize;
+}
+.form1 .form-control::placeholder {
+  font-size: 16px;
+  color: rgba(222, 226, 230, 0.7);
+  text-transform: capitalize;
+}
+.form1 .form-control.alt {
+  min-height: 56px;
+}
+
+@media (max-width: 767px) {
+  .form1 .form-control.alt {
+    min-height: 48px;
+  }
+}
+.select1 {
+  position: relative;
+  max-width: 122px;
+}
+.select1 .icon {
+  left: 12px;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.select1 select {
+  cursor: pointer;
+  padding: 6px 36px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-radius: 4px;
+  max-height: 32px;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1.25;
+  background-color: rgba(22, 22, 22, 0.7);
+  color: #fff;
+}
+.select1::after {
+  content: "\f2ec";
+  font-family: "Font Awesome 6 Pro";
+  font-weight: 900;
+  font-size: 6px;
+  position: absolute;
+  top: 35%;
+  transform: rotate(180deg);
+  color: #fff;
+  pointer-events: none;
+  right: 10px;
+}
+
+@media (max-width: 991px) {
+  .select1 select {
+    padding: 6px 30px;
+  }
+  .select1 select option:first-child {
+    text-rendering: none;
+  }
+  .select1::after {
+    right: 20px;
+  }
+}
+.section {
+  padding: 75px 0;
+}
+
+.section[data-section=first-section] {
+  position: relative;
+  overflow: hidden;
+}
+.section[data-section=first-section] .figure1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(1.25) translateY(-10px);
+}
+.section[data-section=first-section] .container {
+  padding-top: 230px;
+  position: relative;
+  margin-bottom: 80px;
+  z-index: 1;
+}
+.section[data-section=first-section] .divider {
+  position: relative;
+  bottom: -50px;
+}
+
+@media (max-width: 767px) {
+  .section[data-section=first-section] .container {
+    padding-top: 25px !important;
+  }
+  .section[data-section=first-section] .container .h3 {
+    font-size: 1.125rem !important;
+  }
+}
+/*relative-section*/
+.relative-ection {
+  position: relative;
+}
+.relative-ection .card1 {
+  position: absolute;
+  bottom: 10px;
+  left: 235px;
+}
+
+.card1 {
+  border-radius: 12px;
+  padding: 8px 12px;
+  border: 1px solid #fff;
+  background-color: #000;
+}
+.card1 p {
+  margin-bottom: 0;
+}
+
+@media (max-width: 991px) {
+  .card1 {
+    padding: 5px 12px;
+    font-size: 0.875rem;
+  }
+}
+@media (max-width: 575px) {
+  .card1 {
+    padding: 4px 10px;
+  }
+}
+.accordion1 {
+  border: 0;
+  border-radius: 0;
+}
+.accordion1 .accordion-item {
+  margin-bottom: 8px;
+  border: 0;
+  background-color: transparent;
+}
+.accordion1 .accordion-item:first-of-type .accordion-button, .accordion1 .accordion-item:last-of-type .accordion-button {
+  border-radius: 0;
+}
+.accordion1 .accordion-item .accordion-header .accordion-button {
+  padding: 24px;
+  padding-right: 65px;
+  font-size: 1.5rem;
+  background-color: #2d2d2d;
+  border: 0;
+  border-bottom: 3px solid #000 !important;
+  color: #fff;
+}
+.accordion1 .accordion-item .accordion-header .accordion-button:focus, .accordion1 .accordion-item .accordion-header .accordion-button:not(.collapsed) {
+  box-shadow: none;
+}
+.accordion1 .accordion-item .accordion-header .accordion-button::after {
+  content: "+";
+  font-family: "font awesome 6 sharp";
+  font-size: 2.1875rem;
+  color: #fff;
+  background-image: none;
+  transition: none;
+  position: absolute;
+  right: 35px;
+  top: 18px;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1) 0s;
+  -webkit-transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1) 0s;
+  -moz-transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1) 0s;
+  -o-transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1) 0s;
+  -ms-transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1) 0s;
+}
+.accordion1 .accordion-item .accordion-header .accordion-button:not(.collapsed)::after {
+  transform: rotate(-45deg);
+  top: 24px;
+}
+.accordion1 .accordion-item .accordion-body {
+  padding: 24px;
+  font-size: 1.5rem;
+  background-color: #2d2d2d;
+  color: #fff;
+}
+
+@media (max-width: 991px) {
+  .accordion1 .accordion-item .accordion-header .accordion-button {
+    font-size: 1.125rem;
+  }
+  .accordion1 .accordion-item .accordion-header .accordion-button::after {
+    font-size: 22px;
+    top: 24px;
+  }
+  .accordion1 .accordion-item .accordion-body {
+    font-size: 1.125rem;
+  }
+  .accordion1 .accordion-item .accordion-body p:last-child {
+    margin-bottom: 0px;
+  }
+}
+.box {
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 60px 68px 40px;
+  color: #fff;
+}
+
+/*  ==========================================================================
+	Pages
+    ========================================================================== */
+/*  ==========================================================================
+	Vendor
+    ========================================================================== *//*# sourceMappingURL=main.css.map */

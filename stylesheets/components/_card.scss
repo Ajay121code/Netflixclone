@@ -1,0 +1,23 @@
+.card1 {
+    border-radius: 12px;
+    padding: 8px 12px;
+    border: 1px solid $white;
+    background-color: $black;
+
+    p {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 991px) {
+    .card1 {
+        padding: 5px 12px;
+        font-size: rem-calc(14);
+    }
+}
+
+@media (max-width: 575px) {
+    .card1 {
+        padding: 4px 10px;
+    }
+}

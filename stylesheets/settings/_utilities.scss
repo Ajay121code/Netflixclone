@@ -1,0 +1,115 @@
+.divider {
+    background-color: $gray-800;
+    height: 8px;
+}
+
+.figure1 {
+    img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.figure1 {
+    .overlay1 {
+        background: rgba(0 0 0 / 40%);
+        background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%);
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+}
+
+.video-img-wrapper {
+    position: relative;
+
+    .figure1 {
+        position: relative;
+        z-index: 1;
+    }
+
+    .video-wrapper {
+        position: absolute;
+        top: 20%;
+        left: 13%;
+        z-index: 0;
+        max-width: 100%;
+        max-height: 100%;
+        width: 73%;
+        height: 55%;
+        overflow: hidden;
+
+        video {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.video-img-wrapper {
+    &.alt {
+
+        .video-wrapper {
+            position: absolute;
+            top: 6%;
+            left: 19%;
+            z-index: 0;
+            max-width: 100%;
+            max-height: 100%;
+            width: 61%;
+            height: 55%;
+            overflow: hidden;
+        }
+    }
+}
+
+.small-blue {
+    font-size: rem-calc(14);
+    color: $blue;
+}
+
+.card1-float {
+    z-index: 1;
+    margin-top: -40%;
+}
+
+.form1 {
+    .input-fields {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid;
+
+        input {
+            width: 100%;
+            height: 100%;
+            padding: 0px 10px;
+            outline: none;
+            border-radius: 5px;
+            background-color: rgba(0 0 0 / .7);
+
+            &:focus {
+                border: 1px solid $white;
+            }
+
+            &:focus~label,
+            &:valid~label {
+                top: 4px;
+                font-size: 12px;
+            }
+        }
+
+        label {
+            position: absolute;
+            top: 16px;
+            left: 10px;
+            font-size: 16px;
+            color: rgba(255 255 255/ .7);
+            transition: .1s;
+            text-transform: capitalize;
+            pointer-events: none;
+        }
+    }
+}

@@ -1,0 +1,86 @@
+.form1 {
+    .form-control {
+        background-color: rgba($gray-900, 0.7);
+        border: 1px solid $gray-700;
+        border-radius: 4px;
+        height: 32px;
+        padding: 4px 16px;
+        color: $white;
+
+        &::placeholder {
+            font-size: 16px;
+            color: rgba($gray-300, 0.7);
+            text-transform: capitalize;
+        }
+
+        &.alt {
+            min-height: 56px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .form1 {
+        .form-control {
+            &.alt {
+                min-height: 48px;
+            }
+        }
+    }
+}
+
+.select1 {
+    position: relative;
+    max-width: 122px;
+
+    .icon {
+        left: 12px;
+        color: $white;
+        @include vertical-center;
+    }
+
+    select {
+        cursor: pointer;
+        padding: 6px 36px;
+        appearance: none;
+        border-radius: 4px;
+        max-height: 32px;
+        display: inline-flex;
+        align-items: center;
+        line-height: calc(20/16);
+        background-color: rgba($gray-900, 0.7);
+        color: $white;
+    }
+
+    &::after {
+        content: "\f2ec";
+        font-family: "Font Awesome 6 Pro";
+        font-weight: 900;
+        font-size: 6px;
+        position: absolute;
+        top: 35%;
+        transform: rotate(180deg);
+        color: $white;
+        pointer-events: none;
+        right: 10px;
+    }
+
+}
+
+@media (max-width: 991px) {
+    .select1 {
+        select {
+            padding: 6px 30px;
+
+            option {
+                &:first-child {
+                    text-rendering: none;
+                }
+            }
+        }
+
+        &::after {
+            right: 20px;
+        }
+    }
+}

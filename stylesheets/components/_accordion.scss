@@ -1,0 +1,88 @@
+.accordion1 {
+    border: 0;
+    border-radius: 0;
+
+    .accordion-item {
+        margin-bottom: 8px;
+        border: 0;
+        background-color: transparent;
+
+        &:first-of-type,
+        &:last-of-type {
+            .accordion-button {
+                border-radius: 0;
+            }
+        }
+
+        .accordion-header {
+            .accordion-button {
+                padding: 24px;
+                padding-right: 65px;
+                font-size: rem-calc(24);
+                background-color: $gray-700;
+                border: 0;
+                border-bottom: 3px solid $black !important;
+                color: $white;
+
+                &:focus,
+                &:not(.collapsed) {
+                    box-shadow: none;
+                }
+
+                &::after {
+                    content: "\2b";
+                    font-family: "font awesome 6 sharp";
+                    font-size: rem-calc(35);
+                    color: $white;
+                    background-image: none;
+                    transition: none;
+                    position: absolute;
+                    right: 35px;
+                    top: 18px;
+                    @include cubic-transition;
+                }
+
+                &:not(.collapsed) {
+                    &::after {
+                        transform: rotate(-45deg);
+                        top: 24px;
+                    }
+                }
+            }
+        }
+
+        .accordion-body {
+            padding: 24px;
+            font-size: rem-calc(24);
+            background-color: $gray-700;
+            color: $white;
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .accordion1 {
+        .accordion-item {
+            .accordion-header {
+                .accordion-button {
+                    font-size: rem-calc(18);
+
+                    &::after {
+                        font-size: 22px;
+                        top: 24px;
+                    }
+                }
+            }
+
+            .accordion-body {
+                font-size: rem-calc(18);
+
+                p {
+                    &:last-child {
+                        margin-bottom: 0px;
+                    }
+                }
+            }
+        }
+    }
+}
